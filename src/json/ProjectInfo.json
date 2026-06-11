@@ -1,21 +1,6 @@
 {
+    "Version": "2026.0.1",
     "PublicName":"Portfolio",
     "BrowseTabName":"Gustavo Brizola - Portfolio",
-    "Thumbnail":"https://github.com/GustavoBrizola.png",
-    "Description":"Main way of present all my personal projects",
-
-    "Projects":
-    {
-        "RotatingSquares":
-        {
-            "PublicName": "Rotating Squares",
-            "Thumbnail": "images/Thumb.png",
-            "Description": "Visual demonstration of five coloured squares. The main purpose is understand how CSS files builds animations, implements on page and uses span child.",
-            "Links": []
-        },
-        "VideoMediaPlayer":
-        {
-        
-        }
-    }
+    "Thumbnail":"https://github.com/GustavoBrizola.png"
 }

@@ -13,10 +13,12 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
     define: {
+      // Provide an explicit app-level constant derived from an env var
       __APP_ENV__: JSON.stringify(env.APP_ENV),
     },
 
-    // Public Endpoint
+    // Public URL base
+    // https://<USER>.github.io/<REPO>/
     // https://vite.dev/guide/static-deploy
     base: '/Portfolio/',
 
@@ -39,10 +41,10 @@ export default defineConfig(({ mode }) => {
         // Add absolute paths here (e.g.)
         //'pathname': path.resolve(__dirname, './path/to/folder'),
         // import { function, ... } from 'pathname/path/to/file'
-        'components': path.resolve(__dirname, './src/components'),
+        'elements': path.resolve(__dirname, './src/elements'),
         'json': path.resolve(__dirname, './src/json'),
-        'scripts': path.resolve(__dirname, './src/scripts'),
-        'site': path.resolve(__dirname, './src/site')
+        'js': path.resolve(__dirname, './src/js'),
+        'page': path.resolve(__dirname, './src/page'),
       },
     },
   }

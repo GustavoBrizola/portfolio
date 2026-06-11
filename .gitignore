@@ -32,3 +32,4 @@ dist-ssr
 *.sw?
 
 TODO.MD
+.doc/

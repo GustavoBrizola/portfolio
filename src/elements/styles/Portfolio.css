@@ -1,0 +1,240 @@
+:root {
+    /* General Settings */
+    --border: 2pt;
+    --corner: 7pt;
+    --visibility: hidden;
+    --scrollBar: none;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    /* Colors */
+    --font_color_white: #FFFFFF;
+    --font_color_grey: #BFBFBF; 
+    --color_background: #272433;
+    --color_objects: #363245;
+    --color_buttons: #4D4864;
+    --color_borders: #5B5576;
+    --color_selection: #7B7894;
+
+    /* Navigation Bar */
+    --nav-layer: 100;
+    --nav-position: fixed;
+    --nav-width: 100%;
+    --nav-height: 45pt;
+    --nav-margin-sides: 20pt;
+    --nav-margin-updown: 20px;
+    --nav-content-display: flex;
+    --nav-content-margin: auto;
+    --nav-content-border: 0;
+    --nav-content-background: none;
+    --nav-content-text-size: 10pt;
+
+    /* Page Layout */
+    --page-overflow-y: auto;
+    --page-position: fixed;
+    --page-left: 50%;
+    --page-transform: translateX(-50%);
+    --page-width: 500pt;
+    --page-height: 100%;
+
+    /* Page Content */
+    --page-content-visibility: visible;
+    --page-content-border: 0;
+    --page-content-background: none;
+    --page-content-margin-top: 70pt;
+    --page-content-margin-sides: 20pt;
+    --page-content-margin-bottom: 80pt;
+    --page-content-text-size: 14pt;
+
+    /* Page Bottom */
+    --page-bottom-text-size: 10pt;
+    --page-bottom-height: fit-content;
+    --page-bottom-padding: 20pt;
+    --page-bottom-margin-bottom: 40pt;
+
+}
+
+/* HTML elements Structure */
+body {
+    visibility: var(--visibility); 
+    font-family: var(--font);
+    background-color: var(--color_background);
+
+    div, nav, section {
+        background-color: var(--color_objects);
+        border: var(--border) solid var(--color_borders);
+        scrollbar-width: none;
+    }
+
+    button, a { 
+        display: flex;
+        align-items: center;
+        -webkit-user-select: none;
+        user-select: none;
+        align-content: center;
+        color: var(--font_color_white);
+        background-color: var(--color_buttons);
+        cursor: pointer;
+        border-radius: var(--corner);
+        padding: 5px 10px;
+        border: none;
+        margin: 10px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    
+        /* June 10, 2026. I can nest on CSS. Best day! */
+        /* Now I must refactorate all this because the code here looks extraordinary hideous */
+        p {margin: 0 0 0 10px;}
+
+        img {width: 18px;}
+
+        &:hover {background-color: var(--color_selection);}
+
+        &:active
+        {
+            transition: background-color 0.01s;
+            color: var(--font_color_grey);
+            background-color: var(--color_background);
+        }
+
+        a {
+            color: var(--font_color_white);
+
+            &:active {
+                color: var(--font_color_grey);
+                transition: background-color 0.01s; 
+            }
+        }
+    }
+}
+
+/* Portfolio Structure */
+.navigationBar {
+    -webkit-user-select: none;
+    position: var(--nav-position);
+    user-select: none;
+    display: flex;
+    visibility: visible;
+    transform: translateY(calc(-1 * var(--border)));
+    width: var(--nav-width);
+    height: var(--nav-height);
+    z-index: var(--nav-layer);
+    border-left: 0;
+    top: 0;
+    left: 0;
+    color: var(--font_color_white);
+    
+    & > * {
+        margin: auto 40px;
+        border: 0;
+    }
+}
+
+.navigationBar_section {
+    margin: auto;
+    display: flex;
+    
+    a {
+        background: none;
+        font-weight: bold;
+        margin: auto 10px;
+        color: var(--font_color_white);
+        text-decoration: none;
+        padding: 10px 5px;
+        border-radius: var(--border);
+        transition: background-color 0.3s;
+    }
+
+    a:hover {
+        background-color: var(--color_borders);        
+    }
+
+    a:active {
+        transition: background-color 0.1s;
+        background-color: var(--color_selection);
+    }
+}
+
+.navigationBar_user {
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 40px;
+        margin: 0 10px 0 0px;
+        border-radius: var(--border);
+    }
+}
+
+.page {
+    /* Mobile implementation */
+    /* background: none; */
+    /* border: 0; */
+    visibility: visible;
+    position: absolute;
+    left: var(--page-left);
+    transform: var(--page-transform);
+    width: var(--page-width);
+    top: 0;
+    height: 100%;
+    border-top: 0;
+    border-bottom: 0;
+
+    margin: 0 auto;
+    overflow-y: var(--page-overflow-y);
+    display: flex;
+    flex-direction: column;
+}
+
+.page_content {
+    display: flex;
+    flex-direction: column;
+    color: var(--font_color_white);
+    flex: 1 0 auto;
+    visibility: visible;
+    border: var(--page-content-border);
+    background: var(--page-content-background);
+    margin: var(--page-content-margin-top) var(--page-content-margin-sides) var(--page-content-margin-bottom);
+    align-items: center;
+    border: 0;   
+
+    h3, h4 {
+        margin-bottom: 0;
+    }
+    h5 {margin-top: 0;}
+
+    div {
+        border: 0;
+
+        img {
+            width: 80px;
+            border-radius: var(--border);
+        }
+    }
+}
+
+.page_bottom {
+    flex-shrink: 0;
+    visibility: visible;
+    display: flex;
+    justify-content: flex-end;
+    -webkit-user-select: none;
+    user-select: none;
+    border: 0 solid transparent;
+    border-top: var(--border) solid var(--color_borders);
+    padding: var(--page-bottom-padding);
+
+    & > * {
+        border: 0;
+        font-size: var(--page-bottom-text-size);
+        color: var(--font_color_grey);
+        margin: auto 5pt; 
+        background: none;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline; 
+        cursor: pointer;
+    }
+}
+
