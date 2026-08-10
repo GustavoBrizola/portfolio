@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ProjectDisplay } from "components/elements/ProjectDisplay";
+import ProjectDisplay from "components/elements/ProjectDisplay";
 import projectsData from 'json/personal/Projects.json'
 
 export default
@@ -22,9 +22,9 @@ function Projects() {
                         // @ts-ignore
                         description={project?.description}
                         // @ts-ignore
-                        img_src={project?.image?.icon}
+                        imgSrc={project?.image?.icon}
                         // @ts-ignore
-                        img_alt={project?.name}
+                        imgAlt={project?.name}
                         // @ts-ignore
                         link={project?.link}
                     />

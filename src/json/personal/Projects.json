@@ -6,12 +6,12 @@
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
         },
         "date": {
-            "start": "February 16, 2026",
+            "start": "February 16, 2026",   
             "launch": "March 5, 2026"
         },
         "tags": ["Java", "mySQL", "database", "JDBC"],
         "link": {
-            "github":"https://github.com/GustavoBrizola/Database-Connector"
+            "github": "https://github.com/GustavoBrizola/Database-Connector"
         }
     },
     

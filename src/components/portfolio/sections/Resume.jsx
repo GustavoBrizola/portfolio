@@ -1,14 +1,16 @@
 import React from "react"
 
 import resume from '/pdf/Resume.pdf'
+import icoDonwload from '/svg/ui/download_white.svg';
 
-import ButtonLink from "components/elements/ButtonLink"
+import Button from "components/elements/Button"
 import PdfViewer from "components/elements/PdfViewer"
+
 
 export default
 function Resume()
 {
-    const buttonDownload = (<ButtonLink a_href={resume} string={"Donwload CV"}/>)
+    const buttonDownload = (<Button aHref={resume} imgSrc={icoDonwload} imgLeft={true} imgRight={true} text={"Donwload CV"}/>)
 
     return (    
         <div>

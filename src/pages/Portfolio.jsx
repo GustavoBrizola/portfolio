@@ -1,27 +1,15 @@
-import React from "react";
-import { useState } from "react";
+import React, {useState} from "react";
 
-import'components/styles/Portfolio.css';
+import'./Portfolio.css';
 
-import portfolio from 'json/Portfolio_Info.json'
+import portfolio from 'json/PortfolioInfo.json'
 import avatar from '/images/photos/avatar_placeholder.png'
 
-import Home from "components/portfolio/sections/Home";
-import Projects from "components/portfolio/sections/Projects";
-import Resume from "components/portfolio/sections/Resume";
-import About from "components/portfolio/sections/About";
-import Contact from "components/portfolio/sections/Contact";
+import { pageMap} from "components/portfolio/SectionList";
 
 export default
 function Portfolio() {
-    const [activeSection, setActiveSection] = useState('home');
-    const pageMap = {
-        home:       {label: 'Home', component: <Home/>},
-        projects:   {label: 'Projects', component: <Projects/>},
-        resume:     {label: 'Resume',   component: <Resume/>},
-        about:      {label: 'About',    component: <About/>},
-        contact:    {label: 'Contact',  component: <Contact/>},
-    };
+    const [activeSection, setActiveSection] = useState(pageMap.home.id);
 
     return (
         <main className="portfolio">
@@ -33,6 +21,7 @@ function Portfolio() {
                 <div className='section'>
                     {Object.entries(pageMap).map(([key, value]) => (
                         <a key={key} href={value.label} onClick={(e) => { e.preventDefault(); setActiveSection(key); }}>
+                            <img src={value.icon} alt={null} style={{width: '18px'}}/>
                             {value.label}
                         </a>
                     ))}
@@ -44,10 +33,10 @@ function Portfolio() {
                 </div>
             </section>
             <footer className="footer">
-                <span>© 2026 design and developed by {portfolio.developer}</span>
+                <span>© 2026 Desenvolvido por {portfolio.developer}</span>
                 <div>
-                    <a href='https://github.com/GustavoBrizola/Portfolio' target='_blank' rel='noopener noreferrer'>Repository</a>
-                    <a href='https://github.com/GustavoBrizola/Portfolio/issues' target='_blank' rel='noopener noreferrer'>Report Bug</a>
+                    {/* <a href='https://github.com/GustavoBrizola/Portfolio' target='_blank' rel='noopener noreferrer'>Repositório</a> */}
+                    {/* <a href='https://github.com/GustavoBrizola/Portfolio/issues' target='_blank' rel='noopener noreferrer'>Report Bug</a> */}
                 </div>
                 <span>{portfolio.version}</span>
             </footer>

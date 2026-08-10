@@ -1,6 +1,6 @@
 import React from "react";
 
-import ButtonLink from "components/elements/ButtonLink";
+import Button from "components/elements/Button";
 
 export default
 function Home() {
@@ -14,13 +14,13 @@ function Home() {
                     <div style={{flex:'1'}}>   
                         <p>Have a good feature idea or wanna suggest some? Check the idea section. </p>
                         <div style={{display:'flex'}}>
-                            <ButtonLink a_aria='Suggest' a_href={'https://github.com/GustavoBrizola/Portfolio/discussions/categories/ideas'} string={'Suggest Features'}/>
-                            <ButtonLink a_aria='Feedback' a_href={'https://github.com/GustavoBrizola/Portfolio/discussions/categories/ideas'} string={'Give Feedback'}/>
+                            <Button aAria='Suggest' aHref={'https://github.com/GustavoBrizola/Portfolio/discussions/categories/ideas'} text={'Suggest Features'}/>
+                            <Button aAria='Feedback' aHref={'https://github.com/GustavoBrizola/Portfolio/discussions/categories/ideas'} text={'Give Feedback'}/>
                         </div>
                     </div>
                     <div style={{flex:'1'}}>   
                         <p>Found a bug somewhere? Consider report to the issue section your discover.</p>
-                        <div><ButtonLink a_aria='ReportBug' a_href={'https://github.com/GustavoBrizola/Portfolio/issues'} string={'Report Bug'}/></div>
+                        <div><Button aAria='ReportBug' aHref={'https://github.com/GustavoBrizola/Portfolio/issues'} text={'Report Bug'}/></div>
                     </div>                    
                 </div>
             </div>

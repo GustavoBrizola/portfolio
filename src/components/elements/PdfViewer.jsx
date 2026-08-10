@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, {useState} from "react";
 
 // react-pdf stuff
 import { Document, Page, pdfjs } from 'react-pdf'

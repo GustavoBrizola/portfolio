@@ -1,7 +1,7 @@
 import React from "react";
 
 import avatar from '/images/photos/avatar_placeholder.png'
-import ContactList from "components/portfolio/features/ContactList";
+import ContactList from "components/portfolio/ContactList";
 
 export default
 function About()
@@ -14,7 +14,6 @@ function About()
                 <h4 style={{marginTop:'0'}}>Software Developer</h4>
             </div>
             <div>
-                <h3>Contact</h3>
                 <ContactList/>
             </div>
         </div>

@@ -1,8 +1,7 @@
 import React from "react";
 
-
-import ButtonLink from "components/elements/ButtonLink";
-import ContactList from "components/portfolio/features/ContactList";
+import Button from "components/elements/Button";
+import ContactList from "components/portfolio/ContactList";
 
 export default
 function Contact() {
@@ -15,10 +14,8 @@ function Contact() {
                     width="100%" height="500px" 
                     style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent:'center', margin: '20px 0' }}
                 /> 
-                <ButtonLink a_aria={'Google Maps'} a_href={"https://www.google.com/maps/search/?api=1&query=Porto+Alegre+RS"} string={'Google Maps'} />
             </div>
             <div>
-                <h3>Contacts</h3>
                 <ContactList/>
             </div>
         </div>

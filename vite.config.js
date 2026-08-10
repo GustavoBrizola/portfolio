@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => {
     // Public URL base
     // https://<USER>.github.io/<REPO>/
     // https://vite.dev/guide/static-deploy
-    base: '/portfolio/',
+    base: '/portfolio',
 
     // Server dev port
     // https://vite.dev/config/server-options
