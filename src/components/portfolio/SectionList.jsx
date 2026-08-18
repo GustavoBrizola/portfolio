@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 // Icons
 import homeIcon from       '/svg/ui/home_white.svg'
@@ -22,4 +22,3 @@ const pageMap = {
     about:      {id: 'about',       label: 'Sobre',        icon: aboutIcon,    component: <About/>},
     contact:    {id: 'contact',     label: 'Contatos',     icon: contactIcon,  component: <Contact/>},
 };
- 
