@@ -7,10 +7,10 @@ function BurguerMenu(props) {
     } = props
 
     return (
-        <nav style={{display:'flex', position:"fixed", height: '500px', width:'100%', zIndex:'1001', left:'0', top:'0', backgroundColor: '#272433', borderBottom: '3px solid #5B5576'}}>
-            {/* <a onClick={() => setBurguerMenu(!BurguerMenu)}> */}
-                {/* <img src={burguerIcon} alt={null} style={{width: '18px'}}/> */}
-            {/* </a> */}
-        </nav>
+        <div>
+            <div style={{height:'100%', width:'100%', left:'0', top:'0', position:'fixed', display:'flex', backgroundColor:'black', zIndex:'999', opacity:'0.5'}}/>
+            <nav style={{display:'flex', position:"fixed", height: '50%', width:'100%', zIndex:'999', left:'0', top:'0', backgroundColor: '#272433', borderBottom: '3px solid #5B5576', opacity:'1'}}>
+            </nav>
+        </div>
     )
 }
