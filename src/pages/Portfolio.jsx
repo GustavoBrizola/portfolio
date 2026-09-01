@@ -2,12 +2,12 @@ import React, {useState, useEffect} from "react";
 
 import'./Portfolio.css';
 
-import portfolio from 'json/PortfolioInfo.json'
-import avatar from '/images/photos/avatar_placeholder.png'
 import burguerIcon from '/svg/ui/lines_white.svg';
+import BurguerMenu from "jsx/elements/BurguerMenu";
 
 import { pageMap } from "jsx/portfolio/SectionList";
-import BurguerMenu from "jsx/elements/BurguerMenu";
+import { DevCredits, BuildVersion, FooterLinks } from "jsx/portfolio/Footer";
+import { ProfileDisplay } from "jsx/portfolio/NavigationBar";
 
 export default
 function Portfolio() {
@@ -17,15 +17,13 @@ function Portfolio() {
 
     return (
         <main className="portfolio">
-            {isBurguerMenu && <BurguerMenu className='burguer-menu'/>}
+            {isBurguerMenu && <BurguerMenu/>}
+
             <nav className="navigationBar">
-                <div>
-                    <img src={avatar} alt={`${portfolio.developer} avatar`}/>
-                    <span>{portfolio.developer}</span>
-                </div>
+                <ProfileDisplay/>
                 <div className='section'>
                     {Object.entries(pageMap).slice(0, SectionNumber).map(([key, value]) => (
-                        <a className = 'nav-link'key={key} href={value.label} onClick={(e) => { e.preventDefault(); setActiveSection(key); setBurguerMenu(false)}}>
+                        <a className = 'nav-link'key={key} href={value.label} onClick={(e) => { e.preventDefault(); setActiveSection(key);}}>
                             {value.icon && <img src={value.icon} alt={null} style={{width: '18px'}}/>}
                             {value.label && <span>{value.label}</span>}
                         </a>
@@ -43,14 +41,10 @@ function Portfolio() {
             </section>
 
             <footer className="footer">
-                <span>© 2026 Desenvolvido por {portfolio.developer}</span>
-                <div>
-                    <a href='https://github.com/GustavoBrizola/Portfolio' target='_blank' rel='noopener noreferrer'>Repositório</a>
-                    <a href='https://github.com/GustavoBrizola/Portfolio/issues' target='_blank' rel='noopener noreferrer'>Report Bug</a>
-                </div>
-                <span>{portfolio.version}</span>
+                <DevCredits/>
+                <FooterLinks/>
+                <BuildVersion/>
             </footer>
-
         </main>
     )
 }

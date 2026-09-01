@@ -27,7 +27,7 @@ body {
     overflow-y: auto;
 }
 
-.navigationBar {
+nav {
     --navigationBar_height: 80px;
     
     position: fixed;
@@ -38,7 +38,6 @@ body {
     width: 100%;
     height: var(--navigationBar_height);
     box-sizing: border-box;
-    margin: auto 30px;
 
     img {
         width: 40px;
