@@ -5,7 +5,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ['main', 'burguer-menu']
+    branches: ['burguer-menu']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -26,8 +26,7 @@ jobs:
   deploy:
     environment:
       name: burguer-menu
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+      url: ${{ steps.deployment.outputs.page_url }}/burguer
     steps:
       - name: Checkout
         uses: actions/checkout@v6
