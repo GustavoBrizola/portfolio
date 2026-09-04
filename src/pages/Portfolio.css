@@ -24,10 +24,48 @@ body {
     font-family: var(--font);   
     -webkit-user-select: none;
     user-select: none;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
-nav {
+@keyframes containerFadeIn {
+    from { opacity: 0; }
+    to { opacity: 0.7; }
+}
+.ContainerMenu {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    right: 0;
+    top: 0;
+    
+        div {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+        }
+
+        nav {
+            display: flex;
+            position: fixed;
+            height: 100%;
+            width: 400px;
+            right: 0;
+            background-color: var(--color_objects);
+            border-left: var(--border) solid var(--color_borders);
+            justify-content: center;
+            
+            /* Mobile settings */
+            @media (max-width: 1080px) {
+                width: 100%;
+                height: fit-content;
+                border-bottom: var(--border) solid var(--color_borders);
+            }
+        }
+    }
+
+.navigationBar {
     --navigationBar_height: 80px;
     
     position: fixed;
@@ -67,8 +105,7 @@ nav {
             margin: 5px auto;
         }
 
-        & > * 
-        {
+        & > * {
             display: block;
         }
     }

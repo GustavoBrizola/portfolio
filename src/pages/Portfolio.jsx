@@ -5,7 +5,6 @@ import'./Portfolio.css';
 import { pageMap } from "jsx/portfolio/SectionList";
 
 import burguerIcon from '/svg/ui/lines_white.svg';
-import BurguerMenu from "jsx/elements/BurguerMenu";
 
 import { DevCredits, BuildVersion, FooterLinks } from "jsx/portfolio/Footer";
 import { ProfileDisplay } from "jsx/portfolio/NavigationBar";
@@ -16,14 +15,31 @@ function Portfolio() {
     const [activeSection, setActiveSection] = useState(pageMap.home.id);
     const [isBurguerMenu, setBurguerMenu] = useState(false);
 
-    return (
-        <main className="portfolio">
+    useEffect(() => {
+        const previousOverflowY = document.body.style.overflowY;
+        if (isBurguerMenu) {
+            document.body.style.overflowY = 'hidden';
+        }
+        return () => {
+            document.body.style.overflowY = previousOverflowY;
+        };
+    }, [isBurguerMenu]);
 
-            {isBurguerMenu && <BurguerMenu/>}
+    return (
+        <main className="portfolio" style={{}}>
+
+            {isBurguerMenu &&
+                <menu className="ContainerMenu">
+                    <div style={{backgroundColor:'black', opacity:'0.7'}} onClick={() => setBurguerMenu(!isBurguerMenu)}/>
+                    <nav>
+
+                    </nav>
+                </menu>
+            }
             <nav className="navigationBar">
+
                 <ProfileDisplay/>
                 <div className='section'>
-
                     {/* Temporary */}
                     <SectionDisplay SetActiveSection={setActiveSection} PageMap={pageMap}/>
                     <a onClick={() => setBurguerMenu(!isBurguerMenu)}>

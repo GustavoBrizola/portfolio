@@ -1,6 +1,6 @@
 # Simple workflow for deploying static content to GitHub Pages
 # https://vite.dev/guide/static-deploy
-name: Deploy static content to Pages
+name: Deploy static content to Pages to production environment
 
 on:
   # Runs on pushes targeting the default branch
@@ -21,6 +21,7 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
+# This execute all process to deploy the page
 jobs:
   # Single deploy job since we're just deploying
   deploy:
