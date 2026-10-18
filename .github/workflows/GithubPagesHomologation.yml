@@ -1,11 +1,11 @@
 # Simple workflow for deploying static content to GitHub Pages
 # https://vite.dev/guide/static-deploy
-name: Deploy static content to Pages to production environment
+name: Deploy static content to homologation environment
 
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ['main']
+    branches: ['homologation']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,13 +21,13 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
-# This execute all process to deploy the page
+# This execute all process to deploy the page 
 jobs:
   # Single deploy job since we're just deploying
   deploy:
     runs-on: ubuntu-latest
     environment:
-      name: production
+      name: homologation
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
