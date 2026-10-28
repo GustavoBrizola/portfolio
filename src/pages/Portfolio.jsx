@@ -34,7 +34,6 @@ function Portfolio() {
             <nav className="navigationBar">
                 <ProfileDisplay/>
                 <div className='section'>
-                    {/* Temporary */}
                     <SectionDisplay SetActiveSection={setActiveSection} SetBurguerMenu={setBurguerMenu} PageMap={pageMap}/>
                     <a onClick={() => setBurguerMenu(!isBurguerMenu)} style={{borderLeft: 'var(--border) solid var(--color_borders)'}}>
                         <img src={burguerIcon} alt={null} style={{width: '18px'}}/>

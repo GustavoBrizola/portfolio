@@ -1,6 +1,5 @@
 // @ts-ignore
 import { defineConfig, loadEnv} from 'vite'
-// import { cloudflare } from '@cloudflare/vite-plugin'
 // @ts-ignore
 import react from '@vitejs/plugin-react'
 import path from 'path'
@@ -19,14 +18,14 @@ export default defineConfig(({ mode }) => {
     },
 
     // Public URL base
-    // https://<USER>.github.io/<REPO>/
+    // https://<USER>.github.io/<>/
     // https://vite.dev/guide/static-deploy
-    base: '/',
+    base: '/portfolio',
 
     // Server dev port
     // https://vite.dev/config/server-options
     server: { 
-      port: env.VITE_PORT ? Number(env.VITE_PORT) : 3000,
+      port: env.VITE_PORT ? Number(env.VITE_PORT) : 3001,
       strictPort: true,
       //host: '',
       //open: true || './index.html',

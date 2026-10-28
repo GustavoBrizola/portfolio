@@ -5,17 +5,6 @@ const SectionDisplay = ({PageMap, SetActiveSection, SetBurguerMenu}) => {
 
     const [sectionCount, setSectionCount] = useState(6);
 
-    // const elementRef = useRef(null);
-    // const [totalWidth, setTotalWidth] = useState(0);
-    // useLayoutEffect(() => {
-    //     if(elementRef.current) {setTotalWidth(elementRef.current.clientWidth);}
-    // }, []);
-
-    // useEffect(() => {
-    //     // It only updates by reloading the page
-    //     setSectionCount(Math.floor(window.innerWidth/totalWidth))
-    // },[sectionCount]);
-
     return (
         <>
         {Object.entries(PageMap).slice(0, sectionCount).map(([key, value]) => (
